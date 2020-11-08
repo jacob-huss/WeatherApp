@@ -1,4 +1,4 @@
-package com.tts.weatherapp.models;
+package com.tts.weatherapp.model;
 
 import java.util.List;
 import java.util.Map;
@@ -10,15 +10,33 @@ public class Response {
     private String base;
     private Map<String, String> main;
     private Map<String, String> wind;
-    private Map<String, String> sys;
+    private Map<String, String> clouds;
     private String dt;
+    private Map<String, String> sys;
     private String id;
     private String name;
     private String cod;
     // fields/attributes
 
-    public Response(){}
+    public Response() {}
     // default constructor
+    public Response(Map<String, String> coord, List<Map<String, String>> weather, String base, Map<String, String> main,
+            Map<String, String> wind, Map<String, String> clouds, String dt, Map<String, String> sys, String id,
+            String name, String cod) {
+        this.coord = coord;
+        this.weather = weather;
+        this.base = base;
+        this.main = main;
+        this.wind = wind;
+        this.clouds = clouds;
+        this.dt = dt;
+        this.sys = sys;
+        this.id = id;
+        this.name = name;
+        this.cod = cod;
+    }
+
+    
 
     public Map<String, String> getCoord() {
         return coord;
@@ -99,6 +117,13 @@ public class Response {
     public void setCod(String cod) {
         this.cod = cod;
     }
+    public Map<String, String> getClouds() {
+        return clouds;
+    }
+
+    public void setClouds(Map<String, String> clouds) {
+        this.clouds = clouds;
+    }
     // getters and setters
 
     @Override
@@ -109,4 +134,5 @@ public class Response {
     // to string
 
     
+
 }
